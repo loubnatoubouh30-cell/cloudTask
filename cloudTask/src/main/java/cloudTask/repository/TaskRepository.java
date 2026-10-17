@@ -5,7 +5,7 @@ import cloudtask.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository; // <--- NE PAS OUBLIER CET IMPORT
+import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
@@ -16,7 +16,7 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     List<Task> findByAssignedUserId(@Param("userId") Long userId);
 
     // Optionnel : Trouver par nom d'utilisateur (username)
-    List<Task> findByAssignedUserUsername(String username); // <--- Notez le nom aligné sur assignedUser
+    List<Task> findByAssignedUserUsername(String username);
 
     // Pour trier automatiquement par date d'échéance croissante
     List<Task> findAllByOrderByDueDateAsc();
