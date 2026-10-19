@@ -1,0 +1,2 @@
+spring.datasource.username=your_user
+spring.datasource.password=change_me
